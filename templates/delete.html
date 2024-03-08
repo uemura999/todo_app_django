@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="alert alert-{{ item.priority }}" role="alert">
+    <p>{{ object.title }}</p>
+    <p>{{ object.memo }}</p>
+    <p>{{ object.priority }}</p>
+    <p>{{ object.due_date }}</p>
+</div>
+<form action="" method="POST">{% csrf_token %}
+<input type="submit" value="delete">
+</form>
+<a class="btn btn-primary" href="{% url 'list' %}" role="button">back</a>
+{% endblock content %}
